@@ -30,11 +30,13 @@ export class AppComponent implements OnInit {
       this.fName=data[3].name;
       this.result=true;
       console.log(this.response);
-      for(let i=0;i<10;i++)
+      if(this.location.length!=10)
+        {
+      for(let i=0;i<this.response.length;i++)
       {
         this.location.push(this.response[i].address.geo);
       }
-      
+    }
     }
     
     );  
