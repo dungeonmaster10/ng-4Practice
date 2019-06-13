@@ -1,9 +1,14 @@
-.cen{
-    text-align: center;
-}
-.full-width{
-    width:360px;
-}
-.p-25{
-   margin: 25px;
-}
+.example-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #eee;
+  }
+  .sidenav{
+      width: 200px;
+  }
+  .navbar{
+      background-color: rgb(98, 159, 250);
+  }

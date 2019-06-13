@@ -1,0 +1,87 @@
+<div class="cen container p-25">
+
+  <form [formGroup]="frmGrp">
+    <div class="row">
+      <div class="form-group col-md-6"
+         [ngClass]="{'has-error':!frmGrp.controls['uName'].valid && frmGrp.controls['uName'].touched}">
+        <label>Name:</label>
+        <input class="form-control"  type="text"  placeholder="Fourth User Name" [(ngModel)]="fName"
+           [formControl]="frmGrp.controls['uName']">
+        <div *ngIf="frmGrp.controls['uName'].hasError('required') && frmGrp.controls['uName'].touched &&
+          frmGrp.controls['uName'].dirty" class="alert alert-danger">This field is required.</div>
+      </div>
+    </div>
+    <a routerLink="/first"><button mat-raised-button color="primary">Go To Comp1</button></a>
+  </form>
+
+  <div class="row">
+    <button mat-raised-button (click)='show()'>Show Products</button>
+  </div>
+
+</div>
+
+<div class="row">
+
+  <div class="col-md-3" *ngFor='let user of response'>
+
+    <mat-card style="margin-bottom:16px" class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Shiba Inu</mat-card-title>
+        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p>
+          {{user.name}}
+        </p>
+        <mat-divider></mat-divider>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-icon-button style="color:rgb(245, 97, 97);" (click)="like(user)">
+          <mat-icon *ngIf="!user.like">favorite_border</mat-icon>
+          <mat-icon *ngIf="user.like">favorite</mat-icon>
+        </button>
+        <button mat-icon-button>
+          <mat-icon>share</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+
+  </div>
+
+</div>
+<!-- <div class="cen container">
+  <div class="row" *ngIf='slider'>
+    <div class="col-md-6">
+      <h3 class="cen">Response Array</h3>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <td>ID</td>
+          <td colspan="2">Name</td>
+          <td>Username</td>
+          <td>Email</td>
+        </thead>
+        <tr class="success" *ngFor='let user of response'>
+          <td>{{user.id}}</td>
+          <td colspan="2">{{user.name}}</td>
+          <td>{{user.username}}</td>
+          <td>{{user.email}}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-6">
+      <h3 class="cen">Location Array</h3>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <td>Latitude</td>
+          <td>Longitude</td>
+        </thead>
+        <tr *ngFor="let loc of location">
+          <td>{{loc.lat}}</td>
+          <td>{{loc.lng}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div> -->

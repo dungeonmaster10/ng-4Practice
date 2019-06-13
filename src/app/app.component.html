@@ -1,54 +1,58 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="cen container p-25">
-
-  <form [formGroup]="frmGrp">
-    <div class="row">
-      <div class="form-group col-md-6"  [ngClass]="{'has-error':!frmGrp.controls['uName'].valid && frmGrp.controls['uName'].touched}">
-        <label>First Name:</label>
-        <input class="form-control"  type="text"  placeholder="Fourth User Name" [(ngModel)]="fName"  [formControl]="frmGrp.controls['uName']">
-        <div *ngIf="frmGrp.controls['uName'].hasError('required') && frmGrp.controls['uName'].touched" class="alert alert-danger">This field is required.</div> 
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened" class="sidenav">
+    <mat-list>
+      <mat-list-item>
+        <mat-icon>face</mat-icon>
+        <span>Profile</span>
+      </mat-list-item>
+      <mat-list-item></mat-list-item>
+      <mat-list-item>Item 1</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>Item 2</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>Item 3</mat-list-item>
+    </mat-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+          </button>
+          <span class="navbar-brand" href="#">Shopping Site</span>
+        </div>
+        <span style="margin-left:auto">
+          <button mat-icon-button>
+            <mat-icon>search</mat-icon>
+          </button>
+          <button mat-icon-button>
+            <mat-icon>notifications</mat-icon>
+          </button>
+          <button mat-icon-button>
+            <mat-icon>shopping_cart</mat-icon>
+          </button>
+        </span>
+        <ul class="nav navbar-nav navbar-right">
+          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              <mat-icon>person</mat-icon>
+              <span>Profile</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon>exit_to_app</mat-icon>
+              <span>Logout</span>
+            </button>
+          </mat-menu>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <router-outlet></router-outlet>
     </div>
-
-
-    <div class="col-md-6">
-      <input type="checkbox" [checked]="result">Check Me!
-    </div>
-</div>
-<button (click)='show()' class="btn btn-success">Button</button>
-
-</form>
-</div>
-<div class="cen container">
-  <div class="row">
-    <div class="col-md-6">
-      <h3 class="cen">Response Array</h3>
-      <table class="table table-striped table-bordered">
-        <thead>
-          <td>ID</td>
-          <td colspan="2">Name</td>
-          <td>Username</td>
-          <td>Email</td>
-        </thead>
-        <tr class="success" *ngFor='let user of response'>
-          <td>{{user.id}}</td>
-          <td colspan="2">{{user.name}}</td>
-          <td>{{user.username}}</td>
-          <td>{{user.email}}</td>
-        </tr>
-      </table>
-    </div>
-    <div class="col-md-6">
-      <h3 class="cen">Location Array</h3>
-      <table class="table table-striped table-bordered">
-        <thead>
-          <td>Latitude</td>
-          <td>Longitude</td>
-        </thead>
-        <tr *ngFor="let loc of location">
-          <td>{{loc.lat}}</td>
-          <td>{{loc.lng}}</td>
-        </tr>
-      </table>
-    </div>
-  </div>
-</div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

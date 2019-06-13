@@ -8,7 +8,8 @@ import { MatCommonModule, MatRippleModule } from '@angular/material/core';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatRadioButton } from '@angular/material/radio';
+// import { MatRadioButton } from '@angular/material/radio';
+import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSliderModule } from '@angular/material/slider';
@@ -55,6 +56,7 @@ MatPaginatorModule,
 MatProgressBarModule,
 MatProgressSpinnerModule,
 MatRippleModule,
+MatRadioModule,
 MatSelectModule,
 MatSidenavModule,
 MatSliderModule,
@@ -74,7 +76,7 @@ ObserversModule
 ];
 @NgModule({
 imports: MATERIAL_MODULES,
-declarations: [MatExpansionPanel, MatRadioButton],
+declarations: [MatExpansionPanel],
 exports: MATERIAL_MODULES,
 })
 export class MaterialModule { }
