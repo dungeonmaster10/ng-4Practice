@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { Comp1Component } from './comp1/comp1.component';
 import { Comp0Component } from './comp0/comp0.component';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { PieChartComponent } from './pie-chart/pie-chart.component';
     AppComponent,
     Comp1Component,
     Comp0Component,
-    PieChartComponent
+    PieChartComponent,
+    LoginComponent,
 
   ],
   imports: [

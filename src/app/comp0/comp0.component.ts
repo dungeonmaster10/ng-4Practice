@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MyService } from '../my.service';
 import 'rxjs/add/operator/map';
-import { FormGroup, FormControl, Validators, FormBuilder } from "@angular/forms";
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-comp0',

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MyService } from './my.service';
 
 
 @Component({
@@ -10,7 +11,12 @@ import { Router } from '@angular/router';
 
 export class AppComponent implements OnInit {
   title = 'app';
-  constructor(private router: Router) { }
+  constructor(private router: Router, private serv: MyService) { }
+
+  logout() {
+    this.serv.showNav = false;
+  }
+
   ngOnInit() {
     this.router.navigate(['']);
   }

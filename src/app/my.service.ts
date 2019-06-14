@@ -3,7 +3,7 @@ import { Http } from '@angular/http';
 import { HttpHeaders } from '@angular/common/http';
 @Injectable()
 export class MyService {
-
+  showNav: Boolean = false;
   constructor(private http: Http) { }
   setHttpHeaders(): HttpHeaders {
     const headers = new HttpHeaders();
