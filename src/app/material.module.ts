@@ -30,7 +30,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-// import { MatExpansionPanel } from '@angular/material';
+import { MatExpansionPanel } from '@angular/material';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -76,7 +76,7 @@ ObserversModule
 ];
 @NgModule({
 imports: MATERIAL_MODULES,
-declarations: [], //MatExpansionPanel
+declarations: [MatExpansionPanel],
 exports: MATERIAL_MODULES,
 })
 export class MaterialModule { }
