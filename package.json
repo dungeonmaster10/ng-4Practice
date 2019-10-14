@@ -8,7 +8,8 @@
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy": "ng build --prod --base-href https://dungeonmaster10.github.io/ng-4Practice/ && angular-cli-ghpages --branch gh-pages"
   },
   "private": true,
   "dependencies": {
@@ -24,6 +25,7 @@
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
     "angular-chart.js": "^1.1.1",
+    "angular-cli-ghpages": "^0.6.0",
     "bootstrap": "^4.0.0",
     "chart.js": "^2.7.2",
     "core-js": "^2.4.1",
